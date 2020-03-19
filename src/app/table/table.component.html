@@ -1,0 +1,15 @@
+<form #empform="ngForm" (ngSubmit)="register(empform)">
+<table>
+    <tr>
+      <th *ngFor="let col of columns">
+        {{col}}
+      </th>
+    </tr>
+    <tr *ngFor="let emp of employees">
+     <td con>{{emp.empid}}</td>
+     <!-- <td><input type="text" [(ngModel)]="emp.empname" [ngModelOptions]="{standalone: true}"></td> -->
+      <td  contenteditable="true" (input)="emp.empname = $event.target.innerText">{{emp.empname}}</td> 
+    </tr>
+  </table>
+<input type="submit" value="Submit"/>
+</form>
